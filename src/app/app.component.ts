@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Article } from './types/Article';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'articles-front-end';
+  articles: Article[] = []
+  constructor(ngbConfig: NgbConfig) {
+  }
 }

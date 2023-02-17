@@ -1,0 +1,28 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        My first Modal
+        <button class="btn btn-close" (click)="modal.dismiss('cross-click')"></button>
+    </div>
+    <div class="modal-body">
+        <form #form="ngForm" class="form-control" (ngSubmit)="save(form)">
+            <div class="mb-2">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" name="name" class="form-control" ngModel #name="ngModel" required>
+            </div>
+            <div class="mb-2">
+                <label for="description" class="form-label">Descricion</label>
+                <input type="text" name="description" class="form-control" ngModel #description="ngModel" required>
+            </div>
+            <div class="mb-2">
+                <label for="price" class="form-label">Precio</label>
+                <input type="text" name="price" class="form-control" ngModel #price="ngModel" required>
+            </div>
+            <div class="mb-2">
+                <label for="stock" class="form-label">Stock</label>
+                <input type="text" name="stock" class="form-control" ngModel #stock="ngModel" required>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+        </form>
+    </div>
+</ng-template>
+<button class="btn btn-primary" (click)="open(content)">Create Articles</button>
